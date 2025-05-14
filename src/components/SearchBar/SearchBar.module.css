@@ -45,7 +45,7 @@
 }
 .inputText {
   min-width: 200px;
-  border-left: 1px solid rgba(0, 0, 0, 0.137);
+  border-left: 1px solid rgba(10, 10, 10, 0.137);
 }
 
 .inputNum::-webkit-outer-spin-button,
