@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchImages } from "./api/unsplash";
 import { ImageData } from "./types/Image";
 import ImageCard from "./components/ImageCard/ImageCard";
-import Searchbar from "./components/Searchbar/SearchBar";
+import Searchbar from "./components/SearchBar/SearchBar";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import s from "./App.module.css";
