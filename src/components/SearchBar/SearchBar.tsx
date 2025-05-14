@@ -14,15 +14,15 @@ const SearchBar: FC<SearchBarProps> = ({ handleQuery }) => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const newQuery = (formData.get("query") as string).trim().toLowerCase();
-    const perPageStr = formData.get("per_page") as string;
-
-    if (!newQuery) {
+    const queryField = formData.get("query");
+    if (typeof queryField !== "string" || queryField.trim() === "") {
       toast.error("Search cannot be empty");
       return;
     }
 
-    const perPage = Number(perPageStr) || 10;
+    const newQuery = queryField.trim().toLowerCase();
+    const perPageStr = formData.get("per_page") as string;
+    const perPage = Math.min(Math.max(Number(perPageStr), 1), 30);
 
     form.reset();
     handleQuery(newQuery, perPage);
